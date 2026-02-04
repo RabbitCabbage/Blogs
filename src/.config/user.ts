@@ -2,6 +2,21 @@ import type { UserConfig } from '~/types'
 
 export const userConfig: Partial<UserConfig> = {
   // Override the default config here
-  // site: { title: "講評世界" },
-  // seo: { twitter: "@moeyua13" },
+  site: {
+    title: '活版印字',
+    author: 'Shen Dong',
+    description: 'Rediscory the beauty of typography',
+    website: 'https://RabbitCabbage.github.io/Blogs/',
+    socialLinks: [
+      {
+        name: 'github',
+        href: 'https://github.com/RabbitCabbage/Blogs',
+      },
+      {
+        name: 'rss',
+        href: '/atom.xml',
+      },
+    ],
+  },
+  seo: { twitter: '' },
 }

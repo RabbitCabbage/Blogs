@@ -4,7 +4,6 @@ pubDate: 2026-1-31
 categories: []
 description: ""
 slug: scribbles-1-basics-of-ocaml
-draft: true
 ---
 
 ## The properties of OCaml

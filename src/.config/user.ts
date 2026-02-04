@@ -14,7 +14,7 @@ export const userConfig: Partial<UserConfig> = {
       },
       {
         name: 'rss',
-        href: '/atom.xml',
+        href: `${import.meta.env.BASE_URL}/atom.xml`,
       },
     ],
   },

@@ -18,7 +18,7 @@ export const defaultConfig: ThemeConfig = {
       },
       {
         name: 'rss',
-        href: '/atom.xml',
+        href: `${import.meta.env.BASE_URL}/atom.xml`,
       },
       {
         name: 'twitter',

@@ -6,7 +6,7 @@ export const userConfig: Partial<UserConfig> = {
     title: '活版印字',
     author: 'Shen Dong',
     description: 'Rediscory the beauty of typography',
-    website: 'https://RabbitCabbage.github.io/Blogs/',
+    website: 'https://RabbitCabbage.github.io/',
     socialLinks: [
       {
         name: 'github',

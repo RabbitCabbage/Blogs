@@ -11,7 +11,7 @@ const list = getListFromMap(categoryMap)
 function getListFromMap(map: typeof categoryMap) {
   return Array.from(map).map(([key, value]) => ({
     title: key,
-    href: `/categories/${getPathFromCategory(key, themeConfig.site.categoryMap)}`,
+    href: `${import.meta.env.BASE_URL}/categories/${getPathFromCategory(key, themeConfig.site.categoryMap)}`,
     size: t('categories_count', value.length),
   }))
 }

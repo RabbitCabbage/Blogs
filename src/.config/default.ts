@@ -32,19 +32,19 @@ export const defaultConfig: ThemeConfig = {
     navLinks: [
       {
         name: 'Posts',
-        href: '/',
+        href: `${import.meta.env.BASE_URL}/`,
       },
       {
         name: 'Archive',
-        href: '/archive',
+        href: `${import.meta.env.BASE_URL}/archive`,
       },
       {
         name: 'Categories',
-        href: '/categories',
+        href: `${import.meta.env.BASE_URL}/categories`,
       },
       {
         name: 'About',
-        href: '/about',
+        href: `${import.meta.env.BASE_URL}/about`,
       },
     ],
     categoryMap: [{ name: '胡适', path: 'hu-shi' }],

@@ -3,7 +3,7 @@ import type { UserConfig } from '~/types'
 export const userConfig: Partial<UserConfig> = {
   // Override the default config here
   site: {
-    title: '二律背反',
+    title: 'アンチノミー',
     subtitle: 'Antinomy',
     author: 'Shen Dong',
     description: 'Rediscory the beauty of typography',

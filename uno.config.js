@@ -25,10 +25,17 @@ const cssExtend = {
     'white-space': 'normal',
     'word-wrap': 'break-word',
     'padding': '2px 4px',
-    'color': '#c7254e',
     'font-size': '90%',
-    'background-color': '#f9f2f4',
+    'font-weight': 'normal',
     'border-radius': '4px',
+    'color': 'rgb(111, 66, 193)',
+    'background-color': 'rgb(242,244,248)',
+  },
+
+  '.dark :where(:not(pre):not(a) > code)': {
+    'color': 'rgb(179, 146, 240)',
+    'background-color': 'rgb(36, 41, 46)',
+
   },
 
   'li': {
@@ -58,7 +65,7 @@ export default defineConfig({
     presetTypography({ cssExtend }),
     presetAttributify(),
     presetIcons({ scale: 1.2, warn: true }),
-    presetTheme ({
+    presetTheme({
       theme: {
         dark: {
           colors: { ...colorsDark, shadow: '#FFFFFF0A' },

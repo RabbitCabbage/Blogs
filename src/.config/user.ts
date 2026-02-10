@@ -4,10 +4,10 @@ export const userConfig: Partial<UserConfig> = {
   // Override the default config here
   site: {
     title: 'アンチノミー',
-    subtitle: 'Antinomy',
-    author: 'Shen Dong',
-    description: 'Rediscory the beauty of typography',
-    website: 'https://RabbitCabbage.github.io/',
+    subtitle: 'にりつはいはん',
+    author: 'Shen, 1024th',
+    description: 'Aren\'t learning new things and doing research an antinomy?',
+    website: 'https://RabbitCabbage.github.io/Blogs',
     socialLinks: [
       {
         name: 'github',

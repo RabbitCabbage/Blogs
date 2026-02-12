@@ -22,6 +22,10 @@ html {
   --at-apply: 'hover:(c-background bg-primary decoration-primary)';
 }
 
+pre.astro-code {
+  background-color: #f2f4f8 !important;
+}
+
 @media (prefers-color-scheme: dark) {
   .astro-code,
   .astro-code span {

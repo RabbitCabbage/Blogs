@@ -22,16 +22,14 @@ html {
   --at-apply: 'hover:(c-background bg-primary decoration-primary)';
 }
 
-pre.astro-code {
+.astro-code {
   background-color: #f2f4f8 !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  pre.astro-code {
-    background-color: var(--shiki-dark-bg) !important;
-  }
   .astro-code,
   .astro-code span {
     color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
   }
 }

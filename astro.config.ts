@@ -4,6 +4,7 @@ import swup from '@swup/astro'
 import robotsTxt from 'astro-robots-txt'
 import { defineConfig } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
+import { remarkMark } from 'remark-mark-highlight'
 import remarkMath from 'remark-math'
 import UnoCSS from 'unocss/astro'
 import devtoolsJson from 'vite-plugin-devtools-json'
@@ -24,6 +25,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       remarkMath,
+      remarkMark,
     ],
     rehypePlugins: [
       rehypeKatex,

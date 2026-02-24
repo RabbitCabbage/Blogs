@@ -11,7 +11,8 @@ html {
 
   text-shadow: 1px 1px 1px var(--uno-colors-shadow);
   background-size: 7px 7px;
-  background-image: linear-gradient(to right, var(--uno-colors-shadow) 1px, transparent 1px),
+  background-image:
+    linear-gradient(to right, var(--uno-colors-shadow) 1px, transparent 1px),
     linear-gradient(to bottom, var(--uno-colors-shadow) 1px, transparent 1px);
 }
 
@@ -31,5 +32,24 @@ html {
   .astro-code span {
     color: var(--shiki-dark) !important;
     background-color: var(--shiki-dark-bg) !important;
+  }
+}
+
+:where(blockquote) {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--uno-colors-primary);
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+  font-style: normal;
+}
+
+:where(blockquote > p) {
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :where(blockquote) {
+    background: rgba(255, 255, 255, 0.06);
   }
 }

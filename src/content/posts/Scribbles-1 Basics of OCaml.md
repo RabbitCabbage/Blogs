@@ -1,5 +1,5 @@
 ---
-title: Scribbles-1 Basics of OCaml
+title: Scribbles of OCaml Basics 1
 pubDate: 2026-1-31
 categories: []
 description: ""
@@ -472,7 +472,7 @@ addx 5;;
 
 ##### Functiona Associativity
 
-<font color="#ff0000", size = "5pt">Every OCaml function takes exactly one argument.</font>
+<font color="#ff0000">Every OCaml function takes exactly one argument.</font>
 Even though you think of `f` as a function that takes `n` arguments, in reality it is a function that takes 1 argument and returns a function. The type of a function should be `t1 -> (t2 -> (t3 -> t4))`, which is, function types are <font color="#f79646">right associative</font>: there are implicit parentheses around function types, from right to left. The intuition here is that a function takes a single argument and returns a new function that expects the remaining arguments.
 Function application, on the other hand, is <font color="#f79646">left associative</font>, where `e1 e2 e3 e4` is acutally `((e1 e2) e3) e4`.
 

@@ -13,7 +13,7 @@ const items = headings.filter((h) => h.depth >= 2 && h.depth <= 4)
 {
   items.length > 0 && (
     <details class="toc" open={open}>
-      <summary class="toc-summary">目录</summary>
+      <summary class="toc-summary">Table of Contents</summary>
       <nav aria-label="Table of contents">
         <ul>
           {items.map((h) => (

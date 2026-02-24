@@ -1,0 +1,28 @@
+---
+import type { MarkdownHeading } from 'astro'
+
+interface Props {
+  headings: MarkdownHeading[]
+  open?: boolean
+}
+
+const { headings, open = false } = Astro.props as Props
+const items = headings.filter((h) => h.depth >= 2 && h.depth <= 4)
+---
+
+{
+  items.length > 0 && (
+    <details class="toc" open={open}>
+      <summary class="toc-summary">目录</summary>
+      <nav aria-label="Table of contents">
+        <ul>
+          {items.map((h) => (
+            <li class={`depth-${h.depth}`}>
+              <a href={`#${h.slug}`}>{h.text}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </details>
+  )
+}

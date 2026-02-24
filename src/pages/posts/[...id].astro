@@ -7,6 +7,7 @@ import LayoutDefault from '~/layouts/LayoutDefault.astro'
 import LayoutPost from '~/layouts/LayoutPost.astro'
 import { getPosts } from '~/utils'
 import { render } from 'astro:content'
+import TableOfContents from '~/components/TableOfContents.astro'
 
 export const getStaticPaths = (async () => {
   const posts = await getPosts()
@@ -24,7 +25,7 @@ export const getStaticPaths = (async () => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
 const { entry, prev, next } = Astro.props
-const { Content } = await render(entry)
+const { Content, headings } = await render(entry)
 const { translate: t } = Astro.locals
 
 function getUrl(id: string) {
@@ -36,6 +37,10 @@ function getUrl(id: string) {
   <SiteSeo slot="seo" title={entry.data.title} desc={entry.data.description} banner={entry.data.banner} />
 
   <LayoutPost post={entry}>
+    <aside class="not-prose my-6 p-4 border-(l-4 primary) bg-white/40 rounded">
+      <TableOfContents headings={headings} />
+    </aside>
+
     <Content />
   </LayoutPost>
 

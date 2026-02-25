@@ -1,5 +1,5 @@
 ---
-title: Scribbles of OCaml Basics 1
+title: Scribbles-1 Basics of OCaml
 pubDate: 2026-1-31
 categories: []
 description: ""

@@ -11,8 +11,7 @@ html {
 
   text-shadow: 1px 1px 1px var(--uno-colors-shadow);
   background-size: 7px 7px;
-  background-image:
-    linear-gradient(to right, var(--uno-colors-shadow) 1px, transparent 1px),
+  background-image: linear-gradient(to right, var(--uno-colors-shadow) 1px, transparent 1px),
     linear-gradient(to bottom, var(--uno-colors-shadow) 1px, transparent 1px);
 }
 
@@ -38,7 +37,6 @@ html {
 :where(blockquote) {
   margin: 1rem 0;
   padding: 0.75rem 1rem;
-  border-left: 4px solid var(--uno-colors-primary);
   background: rgba(0, 0, 0, 0.04);
   border-radius: 10px;
   font-style: normal;
@@ -50,6 +48,62 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :where(blockquote) {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.toc {
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+}
+
+.toc-summary {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.toc nav {
+  padding: 0 1rem 0.75rem;
+}
+
+details.toc nav ul {
+  margin: 0;
+  list-style: none;
+}
+
+details.toc nav li {
+  margin: 0.25rem 0;
+}
+
+details.toc nav li.depth-2 {
+  padding-left: 0;
+}
+details.toc nav li.depth-3 {
+  padding-left: 0.75rem;
+}
+details.toc nav li.depth-4 {
+  padding-left: 1.5rem;
+}
+details.toc nav li.depth-5 {
+  padding-left: 2.25rem;
+}
+details.toc nav li.depth-6 {
+  padding-left: 3rem;
+}
+
+details.toc nav {
+  line-height: 1.75;
+}
+
+details.toc nav li {
+  margin: 0.25rem 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .toc {
     background: rgba(255, 255, 255, 0.06);
   }
 }

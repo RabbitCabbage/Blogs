@@ -11,5 +11,8 @@ const { post } = Astro.props
 
 <article class="prose">
   <PostMeta post={post} />
+  <div class="not-prose">
+    <slot name="toc" />
+  </div>
   <slot />
 </article>

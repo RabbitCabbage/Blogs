@@ -69,36 +69,36 @@ html {
   padding: 0 1rem 0.75rem;
 }
 
-details.toc nav ul {
+.toc nav ul {
   margin: 0;
   list-style: none;
 }
 
-details.toc nav li {
+.toc nav li {
   margin: 0.25rem 0;
 }
 
-details.toc nav li.depth-2 {
+.toc nav li.depth-2 {
   padding-left: 0;
 }
-details.toc nav li.depth-3 {
+.toc nav li.depth-3 {
   padding-left: 0.75rem;
 }
-details.toc nav li.depth-4 {
+.toc nav li.depth-4 {
   padding-left: 1.5rem;
 }
-details.toc nav li.depth-5 {
+.toc nav li.depth-5 {
   padding-left: 2.25rem;
 }
-details.toc nav li.depth-6 {
+.toc nav li.depth-6 {
   padding-left: 3rem;
 }
 
-details.toc nav {
+.toc nav {
   line-height: 1.75;
 }
 
-details.toc nav li {
+.toc nav li {
   margin: 0.25rem 0;
 }
 

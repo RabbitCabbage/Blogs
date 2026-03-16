@@ -35,9 +35,11 @@ function getUrl(id: string) {
 
 <LayoutDefault>
   <SiteSeo slot="seo" title={entry.data.title} desc={entry.data.description} banner={entry.data.banner} />
+  <div slot="sidebar" class="hidden lg:block">
+    <TableOfContents headings={headings} />
+  </div>
 
   <LayoutPost post={entry}>
-    <TableOfContents slot="toc" headings={headings} />
     <Content />
   </LayoutPost>
 

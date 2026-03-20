@@ -44,6 +44,7 @@ export default defineConfig({
     robotsTxt(),
     sitemap(),
     swup({
+      containers: ['main', '#page-sidebar'],
       theme: false,
       animationClass: 'transition-swup-',
       cache: true,

@@ -164,12 +164,16 @@ type intlist = Nil | Cons of int * intlist
 let lst3  = Cons (3, Nil) (* a pair of type int * list *)
 let lst123 = Cons (1, Cons (2, Cons (3, Nil)))
 ```
-Types may be mutually recursive if you use the `and` keyword:
+
+Types may be mutually recursive if you use the `and` keyword:
+
 ```ocaml
 type node = {value : int; next : mylist}
 and mylist = Nil | Node of node
 ```
+
 But such mutual recursion must have at least one type that can end, otherwise it will be cyclic and cause an error.
+
 ```ocaml
 type t = u and u = t
 (* File "[12]", line 1, characters 0-10:
@@ -181,27 +185,34 @@ Error: The type abbreviation t is cyclic:
 ```
 
 Record type can also be recursive. The textbook give such an example:
+
 ```ocaml
 type node = {value : int; next : node}
 ```
+
 But this type is not useful. The only values we can create from this type must refer back to itself in a loop because this recursion doesn't end.
+
 ```ocaml
 let rec n = {value = 1; {value = 2; {value = 3; n}}}
 ```
+
 > Remark from 1024th: coinductive
 
 Variant type can have type parameters.
+
 ```ocaml
 type 'a mylist = Nil | Cons of 'a * 'a mylist
-let lst3 = Cons (3, Nil) 
+let lst3 = Cons (3, Nil)
 ```
+
 If we write functions for such parameterized types, we may want to ensure that the `'a` type annotation can be omitted safely, that is we don't use operations that are specific to some types, like `int` or `string`.<font color="#c0504d"> (polymorphism)</font> Otherwise, we will give up polymorphism by restricting what `'a` can be.
 
-> (directly from book) There’s another kind of variant in OCaml that supports this kind of programming: _polymorphic variants_. Polymorphic variants are just like variants, except:
+> (directly from book) There’s another kind of variant in OCaml that supports this kind of programming: _polymorphic variants_. Polymorphic variants are just like variants, except:
+>
 > 1. You don’t have to declare their `type` or constructors before using them.
 > 2. There is no name for a polymorphic variant type. (So another name for this feature could have been “<font color="#4bacc6">anonymous variants</font>”.)
 > 3. The constructors of a polymorphic variant <font color="#4bacc6">start with a backquote character</font>.
-> Using polymorphic variants, we can rewrite `f`:
+>    Using polymorphic variants, we can rewrite `f`:
 
 ```ocaml
 let f = function
@@ -210,6 +221,7 @@ let f = function
   | n -> `Finite (-n)
 (* val f : int -> [> `Finite of int | `Infinity ] = <fun> *)
 ```
+
 And `f` returns a value of type `'Finite` or `'Infinity`. The backquote is still there.
 
 ### Option

@@ -11,13 +11,15 @@ const items = headings.filter((h) => h.depth >= 2 && h.depth <= 4)
 
 {
   items.length > 0 && (
-    <div class="toc">
+    <div class="toc" id="toc">
       <div class="toc-summary">Table of Contents</div>
       <nav aria-label="Table of contents">
         <ul>
           {items.map((h) => (
             <li class={`depth-${h.depth}`}>
-              <a href={`#${h.slug}`}>{h.text}</a>
+              <a href={`#${h.slug}`} class="toc-link">
+                {h.text}
+              </a>
             </li>
           ))}
         </ul>

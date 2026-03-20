@@ -32,7 +32,9 @@ const dark = themeConfig.appearance.theme === 'dark'
       lg="row-1-2 col-2-3 justify-between items-start"
     >
       <SiteTitle />
-      <slot name="sidebar" />
+      <aside id="page-sidebar">
+        <slot name="sidebar" />
+      </aside>
       <SiteNavigation />
     </header>
 
@@ -45,12 +47,83 @@ const dark = themeConfig.appearance.theme === 'dark'
     </footer>
 
     <script>
+      function initTocHighlight() {
+        const toc = document.querySelector('#toc')
+        if (!toc)
+return
+
+        const root = document.querySelector('main')
+        const links = Array.from(toc.querySelectorAll('.toc-link'))
+        const headings = Array.from(document.querySelectorAll('article :is(h2, h3, h4), main :is(h2, h3, h4)')).filter(
+          (el) => el.id,
+        )
+
+        if (!headings.length || !links.length)
+return
+
+        const clearActive = () => {
+          links.forEach((a) => a.classList.remove('toc-link-active'))
+        }
+
+        const setActive = (id: string) => {
+          clearActive()
+          const link = toc.querySelector(`.toc-link[href="#${CSS.escape(id)}"]`)
+          link?.classList.add('toc-link-active')
+        }
+
+        const visibleIds = new Set<string>()
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              const id = entry.target.id
+              if (!id)
+continue
+
+              if (entry.isIntersecting) {
+                visibleIds.add(id)
+              } else {
+                visibleIds.delete(id)
+              }
+            }
+
+            const firstVisible = headings.find((h) => visibleIds.has(h.id))
+            if (firstVisible) {
+              setActive(firstVisible.id)
+              return
+            }
+
+            const passed = headings
+              .filter((h) => {
+                const rect = h.getBoundingClientRect()
+                const rootTop = root?.getBoundingClientRect?.().top ?? 0
+                return rect.top < rootTop + 80
+              })
+              .at(-1)
+
+            if (passed)
+setActive(passed.id)
+          },
+          {
+            root,
+            threshold: 0,
+            rootMargin: '0px 0px -70% 0px',
+          },
+        )
+
+        headings.forEach((h) => observer.observe(h))
+      }
+
+      initTocHighlight()
+      document.addEventListener('astro:after-swap', initTocHighlight)
+
       document.addEventListener('animationend', removeAnimation, false)
+
       function removeAnimation() {
         document.documentElement.classList.remove('animation-prepared')
         document.removeEventListener('animationend', removeAnimation, false)
       }
-    </script>
+</script>
     <style>
       /* 页面首次加载动画 */
       html.animation-prepared .transition-swup-header,

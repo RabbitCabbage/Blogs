@@ -11,7 +11,8 @@ html {
 
   text-shadow: 1px 1px 1px var(--uno-colors-shadow);
   background-size: 7px 7px;
-  background-image: linear-gradient(to right, var(--uno-colors-shadow) 1px, transparent 1px),
+  background-image:
+    linear-gradient(to right, var(--uno-colors-shadow) 1px, transparent 1px),
     linear-gradient(to bottom, var(--uno-colors-shadow) 1px, transparent 1px);
 }
 
@@ -105,5 +106,22 @@ html {
 @media (prefers-color-scheme: dark) {
   .toc {
     background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.toc-link {
+  transition: color 0.66s ease;
+}
+
+.toc-link-active {
+  color: #8250df;
+}
+
+@media (prefers-color-scheme: dark) {
+  .toc-link {
+    transition: color 0.66s ease;
+  }
+  .toc-link-active {
+    color: #a78bfa;
   }
 }

@@ -67,7 +67,7 @@ author: "Qijia Fan"
 ## 注音输入法
 注音输入法的键位排列与注音符号表的排列顺序高度一致，见下图：
 
-![注音输入法键位图](../assets/zhuyin_keyboard.png)
+![注音输入法键位图](../../assets/zhuyin_keyboard.png)
 
 <!-- ![注音输入法键位图](../picture/zhuyin_keyboard.png) -->
 

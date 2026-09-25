@@ -5,7 +5,7 @@ pubDate: 2026-2-24
 
 ## About this blog
 
-Random blogs by <a href="http://rabbitcabbage.github.io/">me</a> and <a href="http://1024th.top/">1024th</a>. No schedule. Just notes.
+Random scribbles by <a href="http://rabbitcabbage.github.io/">me</a> and <a href="http://1024th.top/">1024th</a>. And we are also having some fun posts from our friend Qijia.
 
 It started from a chance that I TA'd a course on functional programming but had to learn it from scratch, and 1024th was very interested in it. We tend to update posts on things we're both interested in. So the contents will be at the intersection of cryptography and programming languages. ~~Also some natural languages perhaps.~~
 

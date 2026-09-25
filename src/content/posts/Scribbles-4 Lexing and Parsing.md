@@ -1,5 +1,5 @@
 ---
-title: Scribbles-3 Induction and Recursiveness
+title: Scribbles-4 Lexing and Parsing
 pubDate: 2026-4-16
 categories: []
 description: ""

@@ -25,4 +25,5 @@ export const userConfig: Partial<UserConfig> = {
     ],
   },
   seo: { twitter: '' },
+  latex: { katex: true },
 }

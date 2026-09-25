@@ -131,11 +131,11 @@ It's clear to be a recursion scheme where each step for input $y+1$ is computed 
 The complexity class $\textbf {PR}$ is languages that can be decided in time bounded by primitive functions. But there are recursive functions that are computable (like, by a TM) but not premitive recursive, so $\textbf{PR}\subsetneq \textbf R$, where $\textbf R$ is the class of all decision problems solvable by a TM (recursive/decidable languages).
 
 $$
-A(m,n)=\left\{\begin{array}
- nn+1 &\text{if }m=0\\
+A(m,n)=\begin{cases}
+ n+1 &\text{if }m=0\\
  A(m-1,1)&\text{if } m>0,n=0\\
  A(m-1,A(m,n-1)) &\text{if } m>0,n>0
-\end{array}\right.
+\end{cases}
 $$
 
 ```ocaml

@@ -12,7 +12,7 @@ Testing is a kind of inductive reasoning to accumulate evidence in support of a 
 Deductive reasoning proceeds from premises and rules about logic and go to a valid conclusion.
 
 > _Formal verification_ is the task for proving that the implementation of the function satisfies its specification (from [Chapter6 Video21](https://youtu.be/48GBq4koKPs?si=e7lw0tkAULRNSX3j))... It’s difficult to do that in an imperative language, because those expressions might have side effects that change the state.
-> ![[Pasted image 20260316220900.png]]
+> ![figure](../../assets/formalverification.png)
 
 **Equational Reasoning**
 

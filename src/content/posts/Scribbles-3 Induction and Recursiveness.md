@@ -11,7 +11,7 @@ slug: scribbles-3-induction-recursiveness
 Testing is a kind of inductive reasoning to accumulate evidence in support of a conclusion but not validate the conclusion (the correctness of program) directly. (This "inductive" is different from the rigorous induction proof technique)
 Deductive reasoning proceeds from premises and rules about logic and go to a valid conclusion.
 
-> *Formal verification*� is the task for proving that the implementation of the function satisfies its specification (from [Chapter6 Video21](https://youtu.be/48GBq4koKPs?si=e7lw0tkAULRNSX3j))...� It’s difficult to do that in an imperative language, because those expressions might have side effects that change the state.
+> _Formal verification_ is the task for proving that the implementation of the function satisfies its specification (from [Chapter6 Video21](https://youtu.be/48GBq4koKPs?si=e7lw0tkAULRNSX3j))... It’s difficult to do that in an imperative language, because those expressions might have side effects that change the state.
 > ![[Pasted image 20260316220900.png]]
 
 **Equational Reasoning**
@@ -39,9 +39,9 @@ QED
 
 > Write an obviously correct implementation that is lacking in some desired property, such as efficiency, then prove that a better implementation is equal to the original.
 
-For example the textbook gives an example of prove the equivalence of factorial with and without tail recursion. (try to show� `forall� p,� p� *� fact� n� =� facti� p� n`)
+For example the textbook gives an example of prove the equivalence of factorial with and without tail recursion. (try to show `forall p, p * fact n = facti p n`)
 
-The tail-recursive version is called iterative because it "strongly resembles how the same computation would be expressed using a loop" iteratively. Nice English tips, so I copied here.�
+The tail-recursive version is called iterative because it "strongly resembles how the same computation would be expressed using a loop" iteratively. Nice English tips, so I copied here.
 
 And here is a formal proof on `f_r = f_tr` with or without tail recursion (recursive or iterative)
 
@@ -87,10 +87,10 @@ Proof.
 Qed.
 ```
 
-> - **partial correctness**: meaning that� *if*� a program terminates, then its output is correct; and
-> - **total correctness**: meaning that a program� *does*� terminate,� *and*� its output is correct.
+> - **partial correctness**: meaning that _if_ a program terminates, then its output is correct; and
+> - **total correctness**: meaning that a program _does_ terminate, _and_ its output is correct.
 
-A Turing machine cannot decide whether a program halts, but SMART human sometimes do (how smart). A recursive function terminates if all its recursive calls are on elements that are smaller according to� `<`, where `<` means descents and forms a "well-founded relation".
+A Turing machine cannot decide whether a program halts, but SMART human sometimes do (how smart). A recursive function terminates if all its recursive calls are on elements that are smaller according to `<`, where `<` means descents and forms a "well-founded relation".
 
 ```coq
 Require Import List.
@@ -122,7 +122,7 @@ Basic functions are (using superscript to mean $k$-ary)
 - (composition) if $g_1,\dots,g_m$ and $h$ are primitive recursive, then the function $f(\vec{x}) = h(g_1(\vec{x}),\dots,g_m(\vec{x}))$ is also primitive recursive.
 - (primitive recursion) if $g(\vec{x})$ and $h(y,z,\vec{x})$ are primitive recursive, then the function $f$ defined by $f(0,\vec{x})=g(\vec{x})$ and $f(y+1,\vec{x})=h(y,f(y,\vec{x}),\vec{x})$ is also primitive recursive.
 
-It's clear to be a recursion scheme where each step for input $y+1$ is computed from the previous value at $y$, and� $f$� acts as a� for-loopfrom� 0 up to the value of its first argument. Therefore, any primitive recursive function can be computed by applying these two rules only **finitely** many times, and then finally becomes evaluating the basic ones. [Here](https://en.wikipedia.org/wiki/Primitive_recursive_function#Examples) are some interesting examples about how to write common computation as standard primitive recursive form.
+It's clear to be a recursion scheme where each step for input $y+1$ is computed from the previous value at $y$, and $f$ acts as a for-loopfrom 0 up to the value of its first argument. Therefore, any primitive recursive function can be computed by applying these two rules only **finitely** many times, and then finally becomes evaluating the basic ones. [Here](https://en.wikipedia.org/wiki/Primitive_recursive_function#Examples) are some interesting examples about how to write common computation as standard primitive recursive form.
 
 ### Computable function
 
